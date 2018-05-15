@@ -1,12 +1,25 @@
 const gulp = require('gulp');
+
 const pug = require('gulp-pug');
+const sass = require('gulp-sass');
+const rename = require('gulp-rename');
+const sourcemaps = require('gulp-sourcemaps');
+const del = require('del');
+const browserSync = require('browser-sync');
 
 const paths = {
   root: './build',
   templates: {
     pages: 'src/templates/pages/*.pug',
-    src: 'src/templates/**/*.pug',
-    dest: 'build/assets/'
+    src: 'src/templates/**/*.pug'
+  },
+  styles: {
+    src: 'src/styles/**/*.scss',
+    dest: 'build/assets/styles/'
+  },
+  images: {
+    src: 'src/images/**/*.*',
+    dest: 'build/assets/images/'
   }
 }
 
@@ -17,14 +30,49 @@ function templates() {
     .pipe(gulp.dest(paths.root));
 }
 
-exports.templates = templates;
+//sass
+function styles() {
+  return gulp.src('./src/styles/app.scss')
+    .pipe(sourcemaps.init())
+    .pipe(sass({outputStyle: 'compressed'}))
+    .pipe(sourcemaps.write())
+    .pipe(rename({suffix: '.min'}))
+    .pipe(gulp.dest(paths.styles.dest))
+}
 
-// gulp.task('sass', function(){
-//   return gulp.src('dev/*.js')
-//   .pipe(concat('app.js'))
-//   .pipe(uglify())
-//   .pipe(rename({
-//   suffix: '.min'
-//   }))
-//   .pipe(gulp.dest('build/js'));
-// });
+//clean
+function clean() {
+  return del(paths.root)
+}
+
+//галповский вотчер
+function watch() {
+  gulp.watch(paths.templates.src, templates);
+  gulp.watch(paths.styles.src, styles);
+  gulp.watch(paths.images.src, images);
+}
+
+//локальный сервер + livereload
+function server() {
+  browserSync.init({
+    server: paths.root
+  });
+  browserSync.watch(paths.root + '/**/*.*', browserSync.reload);
+}
+
+//просто преносим картинки
+function images() {
+  return gulp.src(paths.images.src)
+    .pipe(gulp.dest(paths.images.dest));
+}
+
+exports.templates = templates;
+exports.styles = styles;
+exports.clean = clean;
+exports.images = images;
+
+gulp.task('default', gulp.series(
+  clean,
+  gulp.parallel(templates, styles, images),
+  gulp.parallel(watch, server)
+));
