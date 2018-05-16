@@ -4,12 +4,12 @@ block variables
     - var title = "Добро пожаловать"
 
 block content
-    h1 Главная
-    form
-        label(for="email") email
-        input(name="email" id="email")
-        label(for="password") password
-        input(name="password" id="password")
-        button Зайти
-    include ../common/menu.pug
+    .container
+        .header
+            .header__btn-auth
+                a(href="#" class="btn-auth") Авторизоваться
+        .block-welcome
+            img(src="assets/images/avatar.jpg", alt="")
+        .footer
+            p &copy; Ганиев Давлет | 2018
         

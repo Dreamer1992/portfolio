@@ -7,6 +7,10 @@ const sourcemaps = require('gulp-sourcemaps');
 const del = require('del');
 const browserSync = require('browser-sync');
 
+const gulpWebpack = require('gulp-webpack');
+const webpack = require('webpack');
+const webpackConfig = require('./webpack.config.js');
+
 const paths = {
   root: './build',
   templates: {
@@ -20,6 +24,10 @@ const paths = {
   images: {
     src: 'src/images/**/*.*',
     dest: 'build/assets/images/'
+  },
+  scripts: {
+    src: 'src/scripts/**/*.js',
+    dest: 'build/assets/scripts/'
   }
 }
 
@@ -45,11 +53,19 @@ function clean() {
   return del(paths.root)
 }
 
+//webpack (3 версия)
+function scripts() {
+  return gulp.src('src/scripts/app.js')
+    .pipe(gulpWebpack(webpackConfig, webpack))
+    .pipe(gulp.dest(paths.scripts.dest));
+}
+
 //галповский вотчер
 function watch() {
   gulp.watch(paths.templates.src, templates);
   gulp.watch(paths.styles.src, styles);
   gulp.watch(paths.images.src, images);
+  gulp.watch(paths.scripts.src, scripts);
 }
 
 //локальный сервер + livereload
@@ -73,6 +89,6 @@ exports.images = images;
 
 gulp.task('default', gulp.series(
   clean,
-  gulp.parallel(templates, styles, images),
+  gulp.parallel(templates, styles, images, scripts),
   gulp.parallel(watch, server)
 ));

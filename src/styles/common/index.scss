@@ -1,0 +1,17 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    min-height: 750px;
+    justify-content: space-between;
+    background: #ccc;
+}
+.header__btn-auth {
+    display: flex;
+    justify-content: flex-end;
+}
+.footer,
+.block-welcome {
+    display: flex;
+    justify-content: center;
+}

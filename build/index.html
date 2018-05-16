@@ -7,22 +7,19 @@
     <meta content="" name="description"/>
     <meta content="" name="keywords"/>
     <title>Добро пожаловать</title>
+    <link rel="stylesheet" href="/assets/styles/app.min.css"/>
+    <script src="assets/scripts/bundle.js" defer="defer"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
   </head>
   <body>
-    <h1>Главная</h1>
-    <form>
-      <label for="email">email</label>
-      <input name="email" id="email"/>
-      <label for="password">password</label>
-      <input name="password" id="password"/>
-      <button>Зайти</button>
-    </form>
-    <h2>Menu</h2>
-    <ul>
-      <li><a href="/index.html">Главная</a></li>
-      <li><a href="/about.html">Обо мне</a></li>
-      <li><a href="/blog.html">Блог</a></li>
-      <li><a href="/my-works.html">Работы</a></li>
-    </ul>
+    <div class="container">
+      <div class="header">
+        <div class="header__btn-auth"><a class="btn-auth" href="#">Авторизоваться</a></div>
+      </div>
+      <div class="block-welcome"><img src="assets/images/avatar.jpg" alt=""/></div>
+      <div class="footer">
+        <p>&copy; Ганиев Давлет | 2018</p>
+      </div>
+    </div>
   </body>
 </html>

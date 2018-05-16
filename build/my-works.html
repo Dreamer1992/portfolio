@@ -7,19 +7,14 @@
     <meta content="" name="description"/>
     <meta content="" name="keywords"/>
     <title>Мои работы</title>
+    <link rel="stylesheet" href="/assets/styles/app.min.css"/>
+    <script src="assets/scripts/bundle.js" defer="defer"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
   </head>
   <body>
     <h1>Мои работы</h1>
-    <div class="container">
-      <ul id="slides">
-        <li class="slide showing"></li>
-        <li class="slide"></li>
-        <li class="slide"></li>
-      </ul>
-      <div class="buttons">
-        <button class="controls" id="previous">&lt;</button>
-        <button class="controls" id="next">&gt;</button>
-      </div>
+    <div class="container"><!-- Fotorama -->
+      <div class="fotorama" data-width="700" data-ratio="700/467" data-max-width="100%"><img src="assets/images/image1.jpg" data-caption="Кот"/><img src="assets/images/image2.jpg" data-caption="Кот2"/><img src="assets/images/image3.jpg" data-caption="Кот3"/></div>
     </div>
   </body>
 </html>

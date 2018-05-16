@@ -1,8 +1,14 @@
 .container
-    ul#slides
-        li.slide.showing
-        li.slide
-        li.slide
-    .buttons
-        button.controls#previous &lt;
-        button.controls#next &gt;
+    <!-- Fotorama -->
+    .fotorama(data-width="700" data-ratio="700/467" data-max-width="100%")
+        img(src="assets/images/image1.jpg" data-caption="Кот")
+        img(src="assets/images/image2.jpg" data-caption="Кот2")
+        img(src="assets/images/image3.jpg" data-caption="Кот3")
+
+    //- ul#slides
+    //-     li.slide.showing
+    //-     li.slide
+    //-     li.slide
+    //- .buttons
+    //-     button.controls#previous &lt;
+    //-     button.controls#next &gt;
