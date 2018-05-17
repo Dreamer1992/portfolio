@@ -7,6 +7,9 @@ const sourcemaps = require('gulp-sourcemaps');
 const del = require('del');
 const browserSync = require('browser-sync');
 
+const plumber = require('gulp-plumber');
+const notify = require('gulp-notify');
+
 const gulpWebpack = require('gulp-webpack');
 const webpack = require('webpack');
 const webpackConfig = require('./webpack.config.js');
@@ -34,6 +37,14 @@ const paths = {
 //pug
 function templates() {
   return gulp.src(paths.templates.pages)
+    .pipe(plumber({
+      errorHandler: notify.onError(function(error) {
+        return {
+          title: 'Pug',
+          message: error.message
+        };
+      })
+    }))
     .pipe(pug({pretty: true}))
     .pipe(gulp.dest(paths.root));
 }
@@ -41,6 +52,14 @@ function templates() {
 //sass
 function styles() {
   return gulp.src('./src/styles/app.scss')
+    .pipe(plumber({
+      errorHandler: notify.onError(function(error) {
+        return {
+          title: 'Styles',
+          message: error.message
+        };
+      })
+    }))
     .pipe(sourcemaps.init())
     .pipe(sass({outputStyle: 'compressed'}))
     .pipe(sourcemaps.write())
