@@ -67,6 +67,10 @@ body {
         .socials__link {
             list-style-type: none;
             display: inline-block;
+            opacity: 0.65;
+            a svg:hover {
+                fill: #4e8839;
+            }
         }
         .socials__link-github {
             margin: 0 27px;
@@ -85,9 +89,10 @@ body {
             background-color: #6c9c5a;
             text-align: center;
             flex-grow: 1;
-            padding: 12px 10px 15px 10px;
             border-right: 2px solid rgba(#dee3e7, .5);
             a {
+                padding: 12px 10px 15px 10px;
+                display: block;
                 font-size: 1em;
                 color: #ffffff;
                 text-decoration: none;
