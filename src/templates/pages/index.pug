@@ -7,24 +7,24 @@ block content
     .container.bg-fon
         .header
             .header__btn-auth
-                a(href="#" class="btn-auth") Авторизоваться
+                a(href="/auth.html" class="btn-auth") Авторизоваться
         .header-user
             .user
                 .user__pic
-                    img(src="assets/images/index/avatar.jpg", alt="Веб разработчик")
+                    img(src="assets/images/avatar.jpg", alt="Веб разработчик")
                 .user__description
                     .user__name Давлет Ганиев
                     .user__data Личный сайт веб разработчика
                 .user__socials
                     ul.socials
                         li.socials__link
-                            a(href="https://vk.com/id152171370").socials__link-vk
+                            a(href="https://vk.com/id152171370" alt="ВКонтакте" title="ВКонтакте").socials__link-vk
                                 include ../../images/vk.svg
                         li.socials__link
-                            a(href="https://github.com/Dreamer1992").socials__link-github
+                            a(href="https://github.com/Dreamer1992" alt="Github" title="Github").socials__link-github
                                 include ../../images/github.svg
                         li.socials__link
-                            a(href="mailto:Ganiev.Davlet@gmail.com").socials__link-gmail
+                            a(href="mailto:Ganiev.Davlet@gmail.com" alt="Gmail" title="Gmail").socials__link-gmail
                                 include ../../images/gmail.svg
                 .pages-site
                     ul.pages
@@ -35,5 +35,5 @@ block content
                         li.pages__link
                             a(href="/blog.html").pages__link-blog Блог
             
-        .footer
-            p.copyright &copy; Ганиев Давлет | 2018
+        footer.footer-index
+            p.index-copyright &copy; Ганиев Давлет | 2018

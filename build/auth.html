@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+    <meta content="" name="description"/>
+    <meta content="" name="keywords"/>
+    <title>Авторизация</title>
+    <link rel="stylesheet" href="/assets/styles/app.min.css"/>
+    <script src="assets/scripts/bundle.js" defer="defer"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+  </head>
+  <body>
+    <section class="bg-auth">
+      <div class="auth__form">
+        <div class="auth__title">
+          <h2 class="underline">Авторизуйтесь</h2>
+        </div>
+        <div class="auth__field">
+          <input class="login" type="text" id="login" placeholder="Логин"/>
+        </div>
+        <div class="auth__field">
+          <input class="password" type="password" id="password" placeholder="Пароль"/>
+        </div>
+        <div class="checkbox">
+          <label>
+            <input class="checkbox-human" type="checkbox" name="human" checked="checked"/><span class="checkbox-custom"></span><span class="checkbox-label">Я человек</span>
+          </label>
+        </div>
+        <div class="radio">
+          <div class="radio__title">
+            <p>Вы точно не робот?</p>
+          </div>
+          <div class="radio__field">
+            <label>
+              <input class="radio-question" type="radio" name="question" value="yes" checked="checked"/><span class="radio-custom"></span><span class="radio-label">Да</span>
+            </label>
+            <label>
+              <input class="radio-question" type="radio" name="question" value="no"/><span class="radio-custom"></span><span class="radio-label">Не уверен</span>
+            </label>
+          </div>
+        </div>
+        <div class="buttons"><a class="auth-btn" href="/index.html">На главную</a><a class="auth-btn" href="">Войти</a></div>
+      </div>
+      <div class="copyright-auth">
+        <p class="copyright__text">© Давлет Ганиев | 2018</p>
+      </div>
+    </section>
+  </body>
+</html>

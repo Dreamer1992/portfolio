@@ -2,7 +2,7 @@ body {
     color: #ffffff;
 }
 .bg-fon {
-    background: url('../images/index/index-fon.jpg') no-repeat;
+    background: url('../images/forest-bg.jpg') no-repeat;
     background-size: cover;
 }
 .container {
@@ -112,6 +112,7 @@ body {
     } //end pages
 } //end user
 
-.copyright {
+.index-copyright {
     padding: 40px 0;
+    text-align: center;
 }
