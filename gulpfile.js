@@ -31,6 +31,10 @@ const paths = {
   scripts: {
     src: 'src/scripts/**/*.js',
     dest: 'build/assets/scripts/'
+  },
+  fonts: {
+    src: 'src/fonts/*.*',
+    dest: 'build/assets/fonts/'
   }
 }
 
@@ -101,13 +105,20 @@ function images() {
     .pipe(gulp.dest(paths.images.dest));
 }
 
+//Переносим шрифты
+function fonts() {
+  return gulp.src(paths.fonts.src)
+    .pipe(gulp.dest(paths.fonts.dest));
+}
+
 exports.templates = templates;
 exports.styles = styles;
 exports.clean = clean;
 exports.images = images;
+exports.fonts = fonts;
 
 gulp.task('default', gulp.series(
   clean,
-  gulp.parallel(templates, styles, images, scripts),
+  gulp.parallel(templates, styles, images, scripts, fonts),
   gulp.parallel(watch, server)
 ));
