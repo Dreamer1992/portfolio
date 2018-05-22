@@ -116,6 +116,7 @@ exports.styles = styles;
 exports.clean = clean;
 exports.images = images;
 exports.fonts = fonts;
+exports.scripts = scripts;
 
 gulp.task('default', gulp.series(
   clean,
