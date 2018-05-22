@@ -33,13 +33,14 @@ block content
                         },
                         {
                             title: "Backend",
-                            skills: ["PHP", "mySQl", "Node.js & npm", "Mongo.db"]
+                            skills: ["PHP", "mySQl", "Node.js & npm", "Mongo"]
                         },
                         {
                             title: "Workflow",
                             skills: ["Git", "Gulp", "Bower"]
                         }
                     ];
+
                 mixin skills_card(arg)
                     .skills_card
                         .skills_title
@@ -48,9 +49,9 @@ block content
                             ul.skills-list
                                 each skill in arg.skills
                                     li.skills-list__item
-                                        svg.skill__circle(width="110" height="110" stroke-width="20" fill="none")
-                                            circle(r="45" cx="55" cy="55" stroke="#dfdcd5" fill="none")
-                                            circle(r="45" cx="55" cy="55" stroke="#74a163" class="sector" transform="rotate(-90 55 55)")
+                                        svg.skill__circle(width="110" height="110" stroke-width="20" viewBox="0 0 110 110" fill="none")
+                                            circle(r="45" cx="55" cy="55" stroke="#dfdcd5" class="circle_first")
+                                            circle(r="45" cx="55" cy="55" stroke="#74a163" class="circle_second" class= skill transform="rotate(-90 55 55)")
                                         span.skill-title= skill
                 
                 for cout in skills_list

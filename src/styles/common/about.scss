@@ -121,7 +121,7 @@
                 color: #566358;
                 text-align: center;
                 text-transform: uppercase;
-                font-family: 'Sansus-Webissimo-Regular', sans-serif;
+                font-family: 'Sansus-Webissimo-Regular', 'sans-serif';
                 padding: 10px 0;
             }
         }
@@ -129,13 +129,13 @@
             font-size: 1em;
             color: #566358;
             padding: 25px 40px;
-            font-family: 'Roboto-Regular', sans-serif;
+            font-family: 'Roboto-Regular', 'sans-serif';
         }
         .skills_card {
             padding: 10px 40px 40px;
             .skills-title {
                 font-size: 1.75em;
-                font-family: 'Roboto', sans-serif;
+                font-family: 'Roboto', 'sans-serif';
                 color: #566358;
                 padding: 20px 0;
             }
@@ -160,15 +160,53 @@
             }
 
         }
-        .sector {
-            opacity: 0;
-            stroke-dasharray: 282;
-            stroke-dashoffset: 14;
-            transition: all 1s;
+        .circle_first {
+            stroke: #dfdcd5;
         }
-        .sector:hover {
-            opacity: 1;
+        .circle_second {
+            stroke: #4e8839;
+            stroke-dasharray: .0 282.6;
+            transition: all .8s;
         }
+        .skills-list__item:hover .HTML5 {
+            stroke-dasharray: 268.47 282.6;
+        }
+        .skills-list__item:hover .CSS3 {
+            stroke-dasharray: 268.47 282.6;
+        }
+        .skills-list__item:hover .JavaScript {
+            stroke-dasharray: 211.95 282.6;
+        }
+
+        .skills-list__item:hover .PHP {
+            stroke-dasharray: 98.91 282.6;
+        }
+        .skills-list__item:hover .mySQl {
+            stroke-dasharray: 98.91 282.6;
+        }
+        .skills-list__item:hover .npm {
+            stroke-dasharray: 197.82 282.6;
+        }
+        .skills-list__item:hover .Mongo {
+            stroke-dasharray: 0.001 282.6;
+        }
+
+        .skills-list__item:hover .Git {
+            stroke-dasharray: 169.56 282.6;
+        }
+        .skills-list__item:hover .Gulp {
+            stroke-dasharray: 240.21 282.6;
+        }
+        .skills-list__item:hover .Bower {
+            stroke-dasharray: 141.3 282.6;
+        }
+        // 14.13(5%), 28.26(10%), 42.39(15%)
+        // 56.52(20%), 70.65(25%), 84.78(30%)
+        // 98.91(35%), 113.04(40%), 127.17(45%)
+        // 141.3(50%), 155.43(55%), 169.56(60%)
+        // 183.69(65%), 197.82(70%), 211.95(75%)
+        // 226.08(80%), 240.21(85%), 254.34(90%)
+        // 268.47(95%)
     }   //-.about__right
 }   //-.about
 
