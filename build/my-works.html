@@ -8,7 +8,8 @@
     <meta content="" name="keywords"/>
     <title>Мои работы</title>
     <link rel="stylesheet" href="/assets/styles/app.min.css"/>
-    <script src="assets/scripts/bundle.js" defer="defer"></script>
+    <link rel="stylesheet prefetch" href="https://unpkg.com/flickity@2/dist/flickity.min.css"/>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
   </head>
   <body>
     <section class="section hero">
@@ -113,14 +114,43 @@
     </section>
     <section class="section__works">
       <div class="works__title">
+        <div class="works__title_back-bg"></div>
         <h2 class="works__title-h2 underline">Мои работы</h2>
       </div>
-      <div class="portfolio__left-col">
-        <div class="container"><!-- Fotorama -->
-          <div class="fotorama" data-width="700" data-ratio="700/467" data-max-width="100%"><img src="assets/images/image1.jpg" data-caption="Кот"/><img src="assets/images/image2.jpg" data-caption="Кот2"/><img src="assets/images/image3.jpg" data-caption="Кот3"/></div>
+      <div class="portfolio__col">
+        <div class="slide--parent">
+          <div class="parent--el">
+            <div class="two--col">
+              <div class="is-item has--img">
+                <figure class="the-img"><img src="assets/images/S&amp;Mitler.jpg" alt=""/></figure>
+              </div>
+              <div class="is-item has--content">
+                <div class="is-item--inner">
+                  <h1><span>S&Mitler</span></h1><small>Сайт салона красоты</small><hr/>
+                  <p>S&Mitler - это салон красоты бизнес-класса. Мастера салона дарят посетителям уверенность в себе и индивидуальный стиль. Здесь представлены все самые востребованные услуги бьюти-индустрии.</p>
+                  <p>Парикмахерский сервис | Косметологический сервис | Маникюрный сервис | Массаж и SPA | Солярий</p>
+                  <p>Дамам здесь предложат экстраординарный ассортимент косметологических процедур и качественный нейл-сервис, а мужчин порадуют услугами стилистов и уходом за лицом.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="parent--el">
+            <div class="two--col">
+              <div class="is-item has--img">
+                <figure class="the-img"><img src="assets/images/S&amp;Mitler.jpg" alt=""/></figure>
+              </div>
+              <div class="is-item has--content">
+                <div class="is-item--inner">
+                  <h1><span>S&Mitler</span></h1><small>Сайт салона красоты</small><hr/>
+                  <p>S&Mitler - это салон красоты бизнес-класса. Мастера салона дарят посетителям уверенность в себе и индивидуальный стиль. Здесь представлены все самые востребованные услуги бьюти-индустрии.</p>
+                  <p>Парикмахерский сервис | Косметологический сервис | Маникюрный сервис | Массаж и SPA | Солярий</p>
+                  <p>Дамам здесь предложат экстраординарный ассортимент косметологических процедур и качественный нейл-сервис, а мужчин порадуют услугами стилистов и уходом за лицом.</p>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
-      <div class="portfolio__right-col"></div>
     </section>
     <section class="bg__what-say">
       <div class="what-say">
@@ -263,4 +293,6 @@
       </div>
     </section>
   </body>
+  <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
+  <script src="assets/scripts/bundle.js" defer="defer"></script>
 </html>
